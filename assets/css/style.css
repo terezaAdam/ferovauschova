@@ -90,6 +90,7 @@ p:last-child { margin-bottom: 0; }
 .nav__logo {
   font-family: var(--font-h); font-weight: 700; font-size: 1.3rem;
   color: var(--forest); text-decoration: none; letter-spacing: -.01em;
+  text-transform: uppercase;
   display: flex; align-items: center; gap: .5rem; justify-self: center; white-space: nowrap;
 }
 .nav__logo span { color: var(--accent); }
