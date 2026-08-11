@@ -19,11 +19,11 @@ include __DIR__ . '/includes/header.php';
       <div>
         <div class="contact-info-card">
           <h3>Naše kancelář</h3>
-          <p>Šrobárova 2002/40, Královské Vinohrady<br>101 00 Praha 10</p>
+          <p>Chrudimská 1418/2, Vinohrady<br>130 00 Praha 3<br>Česká republika</p>
         </div>
         <div class="contact-info-card">
           <h3>Telefon</h3>
-          <p><a href="tel:+420800123456">+420 800 123 456</a></p>
+          <p><a href="tel:+420799901699">+420 799 901 699</a></p>
         </div>
         <div class="contact-info-card">
           <h3>E-mail</h3>

@@ -16,7 +16,7 @@ if ($currentPath === '/index.php') $currentPath = '/';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= htmlspecialchars($pageTitle ?? 'Advokátní úschova – advokátní úschova při koupi a prodeji nemovitostí') ?></title>
 <meta name="description" content="<?= htmlspecialchars($pageDesc ?? 'Advokátní úschova – bezpečná advokátní úschova peněz a dokumentů při koupi a prodeji nemovitostí. Transparentně, rychle a s plnou právní odpovědností.') ?>">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231E2941%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 fill=%22%23904E55%22 font-family=%22Arial%22>A</text></svg>">
+<link rel="icon" href="/assets/img/fav.uschova.png">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -29,7 +29,7 @@ if ($currentPath === '/index.php') $currentPath = '/';
       <?php endforeach; ?>
     </div>
 
-    <a href="/" class="nav__logo">Advokátní<span>úschova</span></a>
+    <a href="/" class="nav__logo"><img src="/assets/img/logo.png" alt="Férová úschova" class="nav__logo-img"></a>
 
     <div class="nav__links nav__links--right">
       <?php foreach ($navRight as $href => $label): ?>

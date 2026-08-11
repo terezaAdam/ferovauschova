@@ -11,9 +11,9 @@ include 'includes/header.php';
   </div>
   <div class="hero__content-side">
     <div class="container">
-      <h1 class="hero__title">Úschova, která chrání <em>víc</em> než jen vaše peníze</h1>
+      <h1 class="hero__title">Finanční úschova pro bezpečný <em>nákup</em> a prodej nemovitostí</h1>
       <div class="hero__desc">
-        <p>Vaše transakce? V naprostém pořádku. Právně, finančně i lidsky.</p>
+        <p>Maximální ochrana vašich financí při převodu nemovitosti. Mějte jistotu, že je váš obchod bezpečný. Právně, finančně i lidsky.</p>
       </div>
       <div class="hero__cta">
         <a href="/kontakty.php" class="btn btn--primary">Nezávazně poptat úschovu</a>

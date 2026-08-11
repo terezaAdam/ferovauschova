@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <a href="/" class="footer__logo">Advokátní <span>úschova</span></a>
+        <a href="/" class="footer__logo"><img src="/assets/img/logo.png" alt="Férová úschova" class="footer__logo-img"></a>
         <p>Advokátní úschova, která chrání víc než jen vaše peníze. Bezpečný, transparentní a lidský přístup k úschově při koupi a prodeji nemovitostí.</p>
       </div>
       <div>
@@ -23,10 +23,11 @@
       <div>
         <h4>Kontakt</h4>
         <ul class="footer__links">
-          <li>Šrobárova 2002/40</li>
-          <li>Královské Vinohrady, Praha 10</li>
+          <li>Chrudimská 1418/2, Vinohrady</li>
+          <li>130 00 Praha 3</li>
+          <li>Česká republika</li>
           <li><a href="mailto:kancelar@equitylegal.cz">kancelar@equitylegal.cz</a></li>
-          <li><a href="tel:+420800123456">+420 800 123 456</a></li>
+          <li><a href="tel:+420799901699">+420 799 901 699</a></li>
         </ul>
       </div>
     </div>
