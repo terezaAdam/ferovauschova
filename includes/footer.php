@@ -2,7 +2,6 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <a href="/" class="footer__logo"><img src="/assets/img/logo.png" alt="Férová úschova" class="footer__logo-img"></a>
         <p>Advokátní úschova, která chrání víc než jen vaše peníze. Bezpečný, transparentní a lidský přístup k úschově při koupi a prodeji nemovitostí.</p>
       </div>
       <div>
