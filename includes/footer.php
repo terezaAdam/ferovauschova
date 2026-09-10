@@ -2,14 +2,14 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <p>Advokátní úschova, která chrání víc než jen vaše peníze. Bezpečný, transparentní a lidský přístup k úschově při koupi a prodeji nemovitostí.</p>
+        <p>Advokátní úschova, která chrání víc než jen vaše peníze. Bezpečný, transparentní a profesionální přístup k úschově při koupi a prodeji nemovitostí.</p>
       </div>
       <div>
         <h4>Navigace</h4>
         <ul class="footer__links">
           <li><a href="/advokatni-uschova.php">Advokátní úschova</a></li>
-          <li><a href="/typy-uschov.php">Typy úschov</a></li>
           <li><a href="/rady-a-pojmy.php">Rady a pojmy</a></li>
+          <li><a href="/typy-uschov.php">Typy úschov</a></li>
         </ul>
       </div>
       <div>
@@ -32,7 +32,7 @@
     </div>
     <div class="footer__bottom">
       <span>&copy; <?= date('Y') ?> Advokátní úschova. Všechna práva vyhrazena.</span>
-      <span>Součást <a href="https://www.equitylegal.cz" target="_blank" rel="noopener">Equity Legal</a>, poskytováno v souladu s pravidly České advokátní komory.</span>
+      <span>Součást <a href="https://www.equitylegal.cz" target="_blank" rel="noopener">Equity Legal</a>, poskytováno v souladu s nejvyššími profesními, bankovními a bezpečnostními pravidly.</span>
     </div>
   </div>
 </footer>

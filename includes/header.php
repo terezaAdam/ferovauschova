@@ -1,8 +1,8 @@
 <?php
 $navItems = [
   '/advokatni-uschova.php' => 'Advokátní úschova',
-  '/typy-uschov.php'       => 'Typy úschov',
   '/rady-a-pojmy.php'      => 'Rady a pojmy',
+  '/typy-uschov.php'       => 'Typy úschov',
   '/kontakty.php'          => 'Kontakt',
 ];
 $navLeft  = array_slice($navItems, 0, 2, true);

@@ -13,7 +13,7 @@ include 'includes/header.php';
     <div class="container">
       <h1 class="hero__title">Finanční úschova pro bezpečný <em>nákup</em> a prodej nemovitostí</h1>
       <div class="hero__desc">
-        <p>Maximální ochrana vašich financí při převodu nemovitosti. Mějte jistotu, že je váš obchod bezpečný. Právně, finančně i lidsky.</p>
+        <p>Maximální ochrana financí při převodu nemovitosti. Mějte jistotu, že je váš obchod bezpečný. Právně, finančně i lidsky.</p>
       </div>
       <div class="hero__cta">
         <a href="/kontakty.php" class="btn btn--primary">Nezávazně poptat úschovu</a>
@@ -27,10 +27,10 @@ include 'includes/header.php';
 <section class="section" aria-labelledby="co-je-heading">
   <div class="container">
     <p class="section-label">Úvodem</p>
-    <h2 class="section-title" id="co-je-heading">Co je advokátní úschova a proč ji využít?</h2>
+    <h2 class="section-title" id="co-je-heading">Jak funguje naše úschova a proč ji využít?</h2>
     <div class="divider"></div>
     <div class="intro-text">
-      <p>Při převodu nemovitosti, obchodního podílu nebo jiné významné transakci je klíčové, aby vše proběhlo bezpečně, bez zbytečných rizik a s právní jistotou. Advokátní úschova je spolehlivý právní nástroj, díky kterému jsou peníze i dokumenty po celou dobu pod kontrolou — až do chvíle, kdy dojde ke splnění všech dohodnutých podmínek.</p>
+      <p>Při převodu nemovitosti, obchodního podílu nebo jiné významné transakci je klíčové, aby vše proběhlo bezpečně, bez zbytečných rizik a s právní jistotou. Férová úschova je spolehlivý právní nástroj, díky kterému jsou peníze i dokumenty po celou dobu pod kontrolou — až do chvíle, kdy dojde ke splnění všech dohodnutých podmínek.</p>
       <p>Je to služba, která chrání obě strany a zajišťuje:</p>
     </div>
     <div class="values__grid">
@@ -42,7 +42,7 @@ include 'includes/header.php';
       <div class="value-card fade-in">
         <div class="value-card__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></div>
         <div class="value-card__title">Přesně definovaný postup</div>
-        <p>Na základě smlouvy dle pravidel České advokátní komory.</p>
+        <p>Na základě smlouvy dle závazných pravidel.</p>
       </div>
       <div class="value-card fade-in">
         <div class="value-card__icon"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0z"/><path d="M5 7h14"/><path d="M9 21h6"/></svg></div>
@@ -67,16 +67,16 @@ include 'includes/header.php';
     <div class="about__grid">
       <div>
         <p class="section-label">O nás</p>
-        <h2 class="section-title" id="about-heading">15 let zkušeností.<br>100% odpovědnost.<br>Právní klid pro vás.</h2>
+        <h2 class="section-title" id="about-heading">20+ let zkušeností.<br>100% odpovědnost.<br>Právní klid pro vás.</h2>
         <div class="divider"></div>
-        <p>V Equity Legal se advokátním úschovám věnujeme již více než 15 let. Každý převod bereme vážně - s maximální péčí, důsledností a osobním přístupem.</p>
+        <p>V Equity Legal se advokátním úschovám věnujeme již více než 20 let. Každý převod řešíme s maximální péčí, důsledností a prověřeným přístupem.</p>
         <p><strong>Proč klienti volí právě nás?</strong></p>
         <ul class="check-list">
           <li>Dlouholetá praxe a zkušený tým advokátů</li>
           <li>Pojištění profesní odpovědnosti do výše 100 milionů Kč</li>
-          <li>Úschova na odděleném účtu vedeném výhradně pro klienty</li>
+          <li>Úschova na odděleném účtu vedeném výhradně pro klienta</li>
           <li>Pravidelné a srozumitelné informování o každém kroku</li>
-          <li>Komunikujeme plynně v angličtině, francouzštině, polštině, maďarštině, rumunštině, ukrajinštině a ruštině</li>
+          <li>Komunikujeme plynně v angličtině, němčině, francouzštině, polštině.</li>
           <li>Plná právní odpovědnost a naprostá transparentnost</li>
         </ul>
       </div>
@@ -85,7 +85,7 @@ include 'includes/header.php';
         <div class="about__accent"></div>
       </div>
     </div>
-    <p style="text-align:center;margin-top:2.5rem;font-family:var(--font-h);font-weight:600;color:var(--forest);">Žádné spekulace. Žádná nejistota. Jen právně podložená důvěra.<br>Equity Legal. Úschova, která chrání víc, než vaše peníze.</p>
+    <p style="text-align:center;margin-top:2.5rem;font-family:var(--font-h);font-weight:600;color:var(--forest);">Žádné spekulace. Žádná nejistota. Jen právně podložený a zabezpečený postup.<br>Equity Legal. Úschova, která chrání víc - peníze, listiny i bezpečný převod nemovitosti.</p>
   </div>
 </section>
 
