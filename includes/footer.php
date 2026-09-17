@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <p>Advokátní úschova, která chrání víc než jen vaše peníze. Bezpečný, transparentní a profesionální přístup k úschově při koupi a prodeji nemovitostí.</p>
+        <p><?= htmlspecialchars($footerContent['tagline']) ?></p>
       </div>
       <div>
         <h4>Navigace</h4>
@@ -16,23 +16,24 @@
         <h4>Společnost</h4>
         <ul class="footer__links">
           <li><a href="/kontakty.php">Kontakt</a></li>
+          <li><a href="/ochrana-osobnich-udaju.php">Ochrana osobních údajů</a></li>
           <li><a href="https://www.equitylegal.cz" target="_blank" rel="noopener">Equity Legal</a></li>
         </ul>
       </div>
       <div>
         <h4>Kontakt</h4>
         <ul class="footer__links">
-          <li>Chrudimská 1418/2, Vinohrady</li>
-          <li>130 00 Praha 3</li>
-          <li>Česká republika</li>
-          <li><a href="mailto:kancelar@equitylegal.cz">kancelar@equitylegal.cz</a></li>
-          <li><a href="tel:+420799901699">+420 799 901 699</a></li>
+          <?php foreach (explode("\n", $footerContent['address']) as $line): ?>
+          <li><?= htmlspecialchars($line) ?></li>
+          <?php endforeach; ?>
+          <li><a href="mailto:<?= htmlspecialchars($footerContent['email']) ?>"><?= htmlspecialchars($footerContent['email']) ?></a></li>
+          <li><a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $footerContent['phone'])) ?>"><?= htmlspecialchars($footerContent['phone']) ?></a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; <?= date('Y') ?> Advokátní úschova. Všechna práva vyhrazena.</span>
-      <span>Součást <a href="https://www.equitylegal.cz" target="_blank" rel="noopener">Equity Legal</a>, poskytováno v souladu s nejvyššími profesními, bankovními a bezpečnostními pravidly.</span>
+      <span>&copy; <?= date('Y') ?> <?= htmlspecialchars($footerContent['copy']) ?></span>
+      <span>Součást <a href="https://www.equitylegal.cz" target="_blank" rel="noopener">Equity Legal</a>, <?= htmlspecialchars($footerContent['partner_text']) ?></span>
     </div>
   </div>
 </footer>

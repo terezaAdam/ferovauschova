@@ -84,20 +84,25 @@ document.addEventListener('DOMContentLoaded', function () {
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (form.botcheck.value) return;
       var msg = document.getElementById('form-msg');
       var btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;
       btn.textContent = 'Odesílám…';
-      fetch('/send-contact.php', { method: 'POST', body: new FormData(form) })
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      })
         .then(function (r) { return r.json(); })
         .then(function (data) {
           msg.classList.remove('ok', 'err');
-          if (data.ok) {
+          if (data.success) {
             msg.textContent = 'Děkujeme, Vaše poptávka byla úspěšně odeslána. Ozveme se Vám co nejdříve.';
             msg.classList.add('ok', 'show');
             form.reset();
           } else {
-            msg.textContent = data.msg || 'Došlo k chybě při odesílání. Zkuste to prosím znovu.';
+            msg.textContent = data.message || 'Došlo k chybě při odesílání. Zkuste to prosím znovu.';
             msg.classList.add('err', 'show');
           }
         })

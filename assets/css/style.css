@@ -1,9 +1,3 @@
-/* ============================================================
-   ADVOKÁTNÍ ÚSCHOVA – Design System
-   Paleta: Navy #1E2941 | Šedá #6B7280 | Off-white #F9F9F7
-   Typografie: Montserrat (nadpisy) · system sans (text)
-   ============================================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
@@ -75,7 +69,6 @@ p:last-child { margin-bottom: 0; }
 .section-header { margin-bottom: 3rem; }
 .divider { width: 48px; height: 2px; background: var(--accent); margin: 1rem 0 2rem; }
 
-/* ── Navigation ── */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nh); background: #fff; border-bottom: 1px solid var(--border);
@@ -143,7 +136,6 @@ p:last-child { margin-bottom: 0; }
 .nav__mobile.open { display: flex; }
 .nav__mobile .nav__link { font-size: .85rem; display: inline-block; width: fit-content; }
 
-/* ── Buttons ── */
 .btn {
   display: inline-flex; align-items: center; gap: .5rem;
   font-family: var(--font-h); font-size: .8rem; font-weight: 600;
@@ -158,7 +150,6 @@ p:last-child { margin-bottom: 0; }
 .btn--outline-white:hover { color: #fff; opacity: .85; }
 .btn--sm { padding: .55rem 1.25rem; font-size: .75rem; }
 
-/* ── Hero ── */
 .hero {
   min-height: calc(100vh - var(--nh)); background: var(--forest);
   position: relative; overflow: hidden;
@@ -183,7 +174,6 @@ p:last-child { margin-bottom: 0; }
 .hero__cta { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 .hero__cta .btn { min-width: 300px; justify-content: center; }
 
-/* ── Values / feature cards ── */
 .values__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
 .value-card { padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); }
 .value-card__icon { width: 44px; height: 44px; margin-bottom: 1.25rem; color: var(--accent); }
@@ -191,7 +181,6 @@ p:last-child { margin-bottom: 0; }
 .value-card__title { font-family: var(--font-h); font-size: .95rem; font-weight: 600; color: var(--forest); margin-bottom: .5rem; }
 .value-card p { font-size: .88rem; }
 
-/* ── Steps / process ── */
 .steps { counter-reset: step; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
 .step { position: relative; padding: 2rem 1.75rem 1.75rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); }
 .step::before {
@@ -203,7 +192,6 @@ p:last-child { margin-bottom: 0; }
 .step h3 { font-size: 1.05rem; margin-bottom: .5rem; }
 .step p { font-size: .88rem; }
 
-/* ── Services / comparison grid ── */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.5rem; }
 .service-card {
   background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent);
@@ -217,7 +205,6 @@ p:last-child { margin-bottom: 0; }
 .service-card__link::after { content: '→'; transition: transform var(--tr); }
 .service-card__link:hover::after { transform: translateX(4px); }
 
-/* ── About ── */
 .about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .about__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
 .about__stat-num { font-family: var(--font-h); font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; }
@@ -226,7 +213,6 @@ p:last-child { margin-bottom: 0; }
 .about__image img { border-radius: var(--r); width: 100%; height: 480px; object-fit: cover; }
 .about__accent { position: absolute; bottom: -20px; left: -20px; width: 120px; height: 120px; background: var(--forest); border-radius: var(--r); z-index: -1; }
 
-/* ── Comparison table ── */
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r); background: var(--surface); }
 table.compare { width: 100%; border-collapse: collapse; min-width: 720px; }
 table.compare th, table.compare td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .88rem; vertical-align: top; }
@@ -235,7 +221,6 @@ table.compare tr:last-child td { border-bottom: none; }
 table.compare tr:nth-child(even) td { background: var(--bg-alt); }
 table.compare td:first-child { font-weight: 600; color: var(--forest); font-family: var(--font-h); font-size: .85rem; }
 
-/* ── Type cards (druhy úschov) ── */
 .type-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 2rem; margin-bottom: 1.5rem; }
 .type-card h2 { font-size: 1.4rem; margin-bottom: .75rem; display: flex; align-items: center; gap: .75rem; }
 .type-card h2::before { content: ''; width: 28px; height: 2px; background: var(--accent); flex-shrink: 0; }
@@ -245,7 +230,6 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 .type-card__cols ul li::before { content: ''; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 .type-card__cols--cons ul li::before { background: #b0524a; }
 
-/* ── Services-style sidebar layout (advokátní úschova / typy úschov) ── */
 .services-nav {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -328,10 +312,8 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 }
 .service-section ul li strong { color: var(--text); font-weight: 600; }
 
-/* ── Services mobile tabs ── */
 .services-mobile-tabs { display: none; }
 
-/* ── FAQ ── */
 .faq { max-width: 800px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--border); }
 .faq-item:first-child { border-top: 1px solid var(--border); }
@@ -345,7 +327,6 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 .faq-a p { padding-bottom: 1.5rem; font-size: .92rem; }
 .faq-item.open .faq-a { max-height: 500px; }
 
-/* ── Articles / Rady a pojmy ── */
 .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 2rem; }
 .article-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; transition: all var(--tr); display: flex; flex-direction: column; }
 .article-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
@@ -371,19 +352,16 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
   color: var(--accent); font-weight: 700; font-size: .9rem;
 }
 
-/* ── CTA Banner ── */
 .cta-banner { background: var(--forest); padding: 80px 0; text-align: center; }
 .cta-banner h2 { color: #fff; margin-bottom: 1rem; }
 .cta-banner p { color: rgba(255,255,255,.65); margin-bottom: 2rem; max-width: 640px; margin-left: auto; margin-right: auto; }
 
-/* ── Page Hero ── */
 .page-hero { background: var(--forest); padding: 76px 0 60px; position: relative; overflow: hidden; }
 .page-hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(135deg, transparent 40%, rgba(184,137,75,.1)); }
 .page-hero__label { font-family: var(--font-h); font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
 .page-hero__title { font-family: var(--font-h); font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 600; color: #fff; margin-bottom: 1rem; position: relative; z-index: 1; }
 .page-hero__desc { max-width: 640px; color: rgba(255,255,255,.65); font-size: 1.02rem; position: relative; z-index: 1; }
 
-/* ── Contact ── */
 .contact-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3.5rem; align-items: start; }
 .contact-info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 2rem; margin-bottom: 1.25rem; }
 .contact-info-card h3 { font-size: 1.05rem; margin-bottom: .75rem; }
@@ -406,7 +384,6 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 .form-msg.ok { background: #e5f0e9; color: var(--forest); }
 .form-msg.err { background: #f6e6e4; color: #8a3b32; }
 
-/* ── Footer ── */
 .footer { background: var(--forest); padding: 56px 0 28px; color: rgba(255,255,255,.62); }
 .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3rem; }
 .footer__logo { font-family: var(--font-h); font-weight: 700; font-size: 1.2rem; color: #fff; margin-bottom: 1rem; display: block; }
@@ -421,7 +398,6 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 .fade-in { animation: fadeIn .6s ease both; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ── Responsive ── */
 @media (max-width: 980px) {
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }

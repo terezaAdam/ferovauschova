@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ferovauschova-php",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/eleanor/Desktop/ferovauschova/ferovauschova && exec php -S localhost:8020 router.php"],
+      "port": 8020
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/data.php';
+$footerContent = fuContent('footer');
 $navItems = [
   '/advokatni-uschova.php' => 'Advokátní úschova',
   '/rady-a-pojmy.php'      => 'Rady a pojmy',

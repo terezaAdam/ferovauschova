@@ -2,13 +2,14 @@
 $pageTitle = 'Kontakt – Advokátní úschova';
 $pageDesc  = 'Nezávazně poptejte advokátní úschovu při koupi nebo prodeji nemovitosti. Napište nám nebo zavolejte.';
 include __DIR__ . '/includes/header.php';
+$c = fuContent('kontakty');
 ?>
 
 <section class="page-hero">
   <div class="container">
-    <p class="page-hero__label">Kontakt</p>
-    <h1 class="page-hero__title">Potřebujete poradit s advokátní úschovou?</h1>
-    <p class="page-hero__desc">Máte jakýkoliv dotaz? Jsme tu, abychom vám pomohli. Kontaktujte nás kdykoliv a získejte právní poradenství na dosah ruky.</p>
+    <p class="page-hero__label"><?= htmlspecialchars($c['hero_label']) ?></p>
+    <h1 class="page-hero__title"><?= htmlspecialchars($c['hero_title']) ?></h1>
+    <p class="page-hero__desc"><?= htmlspecialchars($c['hero_desc']) ?></p>
   </div>
 </section>
 
@@ -19,22 +20,26 @@ include __DIR__ . '/includes/header.php';
       <div>
         <div class="contact-info-card">
           <h3>Naše kancelář</h3>
-          <p>Chrudimská 1418/2, Vinohrady<br>130 00 Praha 3<br>Česká republika</p>
+          <p><?= nl2br(htmlspecialchars($c['office_address'])) ?></p>
         </div>
         <div class="contact-info-card">
           <h3>Telefon</h3>
-          <p><a href="tel:+420799901699">+420 799 901 699</a></p>
+          <p><a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $c['phone'])) ?>"><?= htmlspecialchars($c['phone']) ?></a></p>
         </div>
         <div class="contact-info-card">
           <h3>E-mail</h3>
-          <p><a href="mailto:kancelar@equitylegal.cz">kancelar@equitylegal.cz</a></p>
+          <p><a href="mailto:<?= htmlspecialchars($c['email']) ?>"><?= htmlspecialchars($c['email']) ?></a></p>
         </div>
       </div>
 
       <div class="contact-form">
-        <h2 style="margin-bottom:.5rem;">Napište nám</h2>
-        <p style="margin-bottom:1.75rem;">Máte-li otázky nebo si chcete domluvit schůzku, neváhejte využít náš kontaktní formulář níže. Rádi se vám co nejdříve ozveme.</p>
+        <h2 style="margin-bottom:.5rem;"><?= htmlspecialchars($c['form_title']) ?></h2>
+        <p style="margin-bottom:1.75rem;"><?= htmlspecialchars($c['form_lead']) ?></p>
         <form id="contact-form">
+          <input type="hidden" name="access_key" value="432b3f16-d270-4900-acec-d87f14b4a5a5">
+          <input type="hidden" name="subject" value="Nová poptávka úschovy z webu ferovauschova.cz">
+          <input type="hidden" name="from_name" value="Web Férová úschova">
+          <input type="text" name="botcheck" id="botcheck" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
           <div class="form-group">
             <label for="name">Jméno *</label>
             <input type="text" id="name" name="name" required>
