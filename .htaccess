@@ -42,6 +42,22 @@ AddDefaultCharset UTF-8
   RewriteRule ^admin/includes/ - [F,L]
   RewriteRule ^assets/uploads/.*\.(php|php\d|phtml|phar)$ - [F,L]
   RewriteRule ^prihlaseni/?$ admin/login.php [L,QSA]
+  # Clean URLs without .php. Old .php links get a 301 to the clean URL; the
+  # absolute https target avoids a loop behind the CDN that terminates TLS.
+  RewriteCond %{THE_REQUEST} \s/+index\.php[?\s] [NC]
+  RewriteRule ^index\.php$ https://%{HTTP_HOST}/ [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+advokatni-uschova\.php[?\s] [NC]
+  RewriteRule ^advokatni-uschova\.php$ https://%{HTTP_HOST}/advokatni-uschova [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+typy-uschov\.php[?\s] [NC]
+  RewriteRule ^typy-uschov\.php$ https://%{HTTP_HOST}/typy-uschov [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+rady-a-pojmy\.php[?\s] [NC]
+  RewriteRule ^rady-a-pojmy\.php$ https://%{HTTP_HOST}/rady-a-pojmy [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+kontakty\.php[?\s] [NC]
+  RewriteRule ^kontakty\.php$ https://%{HTTP_HOST}/kontakty [R=301,L]
+  RewriteRule ^advokatni-uschova/?$ advokatni-uschova.php [L,QSA]
+  RewriteRule ^typy-uschov/?$ typy-uschov.php [L,QSA]
+  RewriteRule ^rady-a-pojmy/?$ rady-a-pojmy.php [L,QSA]
+  RewriteRule ^kontakty/?$ kontakty.php [L,QSA]
   # Privacy policy lives on equitylegal.cz; keep old links working
   RewriteRule ^ochrana-osobnich-udaju(\.php)?/?$ https://equitylegal.cz/ochrana-osobnich-udaju [R=301,L]
 </IfModule>

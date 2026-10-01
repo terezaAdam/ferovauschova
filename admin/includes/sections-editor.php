@@ -2,7 +2,7 @@
 // Editable list of page sections (Advokátní úschova, Typy úschov): each section
 // has an anchor id, a mobile tab label, a left-menu label, a heading and a body.
 // Sections can be added and removed; ids of existing sections are kept so
-// links like /typy-uschov.php#soudni-uschova keep working.
+// links like /typy-uschov#soudni-uschova keep working.
 
 require_once __DIR__ . '/rich-editor.php';
 

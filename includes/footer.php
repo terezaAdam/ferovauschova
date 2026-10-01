@@ -7,15 +7,15 @@
       <div>
         <h4>Navigace</h4>
         <ul class="footer__links">
-          <li><a href="/advokatni-uschova.php">Advokátní úschova</a></li>
-          <li><a href="/rady-a-pojmy.php">Rady a pojmy</a></li>
-          <li><a href="/typy-uschov.php">Typy úschov</a></li>
+          <li><a href="/advokatni-uschova">Advokátní úschova</a></li>
+          <li><a href="/rady-a-pojmy">Rady a pojmy</a></li>
+          <li><a href="/typy-uschov">Typy úschov</a></li>
         </ul>
       </div>
       <div>
         <h4>Společnost</h4>
         <ul class="footer__links">
-          <li><a href="/kontakty.php">Kontakt</a></li>
+          <li><a href="/kontakty">Kontakt</a></li>
           <li><a href="https://equitylegal.cz/ochrana-osobnich-udaju" target="_blank" rel="noopener">Ochrana osobních údajů</a></li>
           <li><a href="https://www.equitylegal.cz" target="_blank" rel="noopener">Equity Legal</a></li>
         </ul>

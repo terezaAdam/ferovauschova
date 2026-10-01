@@ -6,4 +6,10 @@ if ($uri === '/prihlaseni' || $uri === '/prihlaseni/') {
   return true;
 }
 
+// Clean URLs (production: .htaccess)
+if (preg_match('#^/(advokatni-uschova|typy-uschov|rady-a-pojmy|kontakty)/?$#', $uri, $m)) {
+  require __DIR__ . '/' . $m[1] . '.php';
+  return true;
+}
+
 return false;

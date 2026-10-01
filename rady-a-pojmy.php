@@ -24,7 +24,7 @@ $c = fuContent('rady_a_pojmy');
   <div class="container">
     <h2><?= htmlspecialchars($c['cta_title']) ?></h2>
     <p><?= htmlspecialchars($c['cta_text']) ?></p>
-    <a href="/kontakty.php" class="btn btn--primary">Nezávazně poptat úschovu</a>
+    <a href="/kontakty" class="btn btn--primary">Nezávazně poptat úschovu</a>
   </div>
 </section>
 

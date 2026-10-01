@@ -2,15 +2,16 @@
 require_once __DIR__ . '/data.php';
 $footerContent = fuContent('footer');
 $navItems = [
-  '/advokatni-uschova.php' => 'Advokátní úschova',
-  '/rady-a-pojmy.php'      => 'Rady a pojmy',
-  '/typy-uschov.php'       => 'Typy úschov',
-  '/kontakty.php'          => 'Kontakt',
+  '/advokatni-uschova' => 'Advokátní úschova',
+  '/rady-a-pojmy'      => 'Rady a pojmy',
+  '/typy-uschov'       => 'Typy úschov',
+  '/kontakty'          => 'Kontakt',
 ];
 $navLeft  = array_slice($navItems, 0, 2, true);
 $navRight = array_slice($navItems, 2, null, true);
 $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 if ($currentPath === '/index.php') $currentPath = '/';
+$currentPath = preg_replace('#\.php$#', '', $currentPath === '/' ? '/' : rtrim($currentPath, '/'));
 ?><!DOCTYPE html>
 <html lang="cs">
 <head>

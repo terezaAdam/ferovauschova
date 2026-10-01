@@ -17,8 +17,8 @@ $c = fuContent('index');
         <p><?= htmlspecialchars($c['hero_desc']) ?></p>
       </div>
       <div class="hero__cta">
-        <a href="/kontakty.php" class="btn btn--primary"><?= htmlspecialchars($c['hero_cta_primary']) ?></a>
-        <a href="/advokatni-uschova.php" class="btn btn--outline-white"><?= htmlspecialchars($c['hero_cta_secondary']) ?></a>
+        <a href="/kontakty" class="btn btn--primary"><?= htmlspecialchars($c['hero_cta_primary']) ?></a>
+        <a href="/advokatni-uschova" class="btn btn--outline-white"><?= htmlspecialchars($c['hero_cta_secondary']) ?></a>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ $c = fuContent('index');
       <?php endforeach; ?>
     </div>
     <div style="text-align:center;margin-top:3rem;">
-      <a href="/advokatni-uschova.php" class="btn btn--outline"><?= htmlspecialchars($c['values_link_label']) ?></a>
+      <a href="/advokatni-uschova" class="btn btn--outline"><?= htmlspecialchars($c['values_link_label']) ?></a>
     </div>
   </div>
 </section>
