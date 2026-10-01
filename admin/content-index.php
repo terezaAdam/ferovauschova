@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/rich-editor.php';
 requireAuth();
 
 function postScalar(string $key, string $default = ''): string {
@@ -17,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   $all['index'] = [
-    'hero_title' => postScalar('hero_title'),
+    'hero_title' => highlightTitle(postScalar('hero_title'), postScalar('hero_highlight')),
     'hero_desc'  => postScalar('hero_desc'),
     'hero_cta_primary'   => postScalar('hero_cta_primary'),
     'hero_cta_secondary' => postScalar('hero_cta_secondary'),
@@ -28,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     'values_items' => $values,
     'values_link_label' => postScalar('values_link_label'),
     'about_label' => postScalar('about_label'),
-    'about_title_html' => postScalar('about_title_html'),
+    'about_title_html' => linesToBr(postScalar('about_title_html')),
     'about_body_html' => postScalar('about_body_html'),
     'about_image_url' => postScalar('about_image_url'),
-    'about_quote_html' => postScalar('about_quote_html'),
+    'about_quote_html' => linesToBr(postScalar('about_quote_html')),
   ];
 
   writeJson('content.json', $all);
@@ -50,8 +51,13 @@ adminHeader('Úvodní stránka', 'content-index');
   <div class="card">
     <div class="card__title">Úvodní sekce (hero)</div>
     <div class="form-group">
-      <label for="hero_title">Hlavní nadpis (lze použít &lt;em&gt;…&lt;/em&gt;)</label>
-      <input type="text" id="hero_title" name="hero_title" value="<?= htmlspecialchars($c['hero_title']) ?>">
+      <label for="hero_title">Hlavní nadpis</label>
+      <input type="text" id="hero_title" name="hero_title" value="<?= htmlspecialchars(html_entity_decode(strip_tags($c['hero_title']), ENT_QUOTES)) ?>">
+    </div>
+    <div class="form-group">
+      <label for="hero_highlight">Zvýrazněná část nadpisu</label>
+      <input type="text" id="hero_highlight" name="hero_highlight" value="<?= htmlspecialchars(titleHighlight($c['hero_title'])) ?>">
+      <p class="form-hint">Slovo nebo část nadpisu, která se na webu zobrazí barevně. Musí v nadpisu být přesně takto napsaná. Nechte prázdné, pokud nic zvýraznit nechcete.</p>
     </div>
     <div class="form-group">
       <label for="hero_desc">Úvodní text</label>
@@ -87,7 +93,7 @@ adminHeader('Úvodní stránka', 'content-index');
       </div>
     </div>
     <div class="form-group">
-      <label for="intro_lead_html">Úvodní text (HTML, odstavce v &lt;p&gt;)</label>
+      <label for="intro_lead_html">Úvodní text</label>
       <textarea id="intro_lead_html" name="intro_lead_html" rows="4"><?= htmlspecialchars($c['intro_lead_html']) ?></textarea>
     </div>
     <?php foreach ($c['values_items'] as $i => $item): ?>
@@ -115,11 +121,12 @@ adminHeader('Úvodní stránka', 'content-index');
       <input type="text" id="about_label" name="about_label" value="<?= htmlspecialchars($c['about_label']) ?>">
     </div>
     <div class="form-group">
-      <label for="about_title_html">Nadpis (lze použít &lt;br&gt; pro zalomení řádků)</label>
-      <textarea id="about_title_html" name="about_title_html" rows="2"><?= htmlspecialchars($c['about_title_html']) ?></textarea>
+      <label for="about_title_html">Nadpis</label>
+      <textarea id="about_title_html" name="about_title_html" rows="3"><?= htmlspecialchars(brToLines($c['about_title_html'])) ?></textarea>
+      <p class="form-hint">Každý řádek se na webu zobrazí na novém řádku.</p>
     </div>
     <div class="form-group">
-      <label for="about_body_html">Text (HTML, odstavce &lt;p&gt;, seznam &lt;ul&gt;&lt;li&gt;)</label>
+      <label for="about_body_html">Text</label>
       <textarea id="about_body_html" name="about_body_html" rows="10"><?= htmlspecialchars($c['about_body_html']) ?></textarea>
     </div>
     <div class="form-group">
@@ -127,12 +134,14 @@ adminHeader('Úvodní stránka', 'content-index');
       <input type="text" id="about_image_url" name="about_image_url" value="<?= htmlspecialchars($c['about_image_url']) ?>">
     </div>
     <div class="form-group">
-      <label for="about_quote_html">Zvýrazněný citát pod sekcí (lze použít &lt;br&gt;)</label>
-      <textarea id="about_quote_html" name="about_quote_html" rows="2"><?= htmlspecialchars($c['about_quote_html']) ?></textarea>
+      <label for="about_quote_html">Zvýrazněný citát pod sekcí</label>
+      <textarea id="about_quote_html" name="about_quote_html" rows="3"><?= htmlspecialchars(brToLines($c['about_quote_html'])) ?></textarea>
+      <p class="form-hint">Každý řádek se na webu zobrazí na novém řádku.</p>
     </div>
   </div>
 
   <button type="submit" class="btn btn--primary">Uložit a publikovat</button>
 </form>
 
+<?php richEditor('#intro_lead_html, #about_body_html', '', 300); ?>
 <?php adminFooter(); ?>

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/rich-editor.php';
 requireAuth();
 
 function postScalar(string $key, string $default = ''): string {
@@ -47,9 +48,9 @@ adminHeader('Rady a pojmy', 'content-rady');
   <div class="card">
     <div class="card__title">Obsah článku</div>
     <div class="form-group">
-      <label for="body_html">Celý text stránky (HTML — nadpisy &lt;h2&gt;, odstavce &lt;p&gt;, seznamy &lt;ul&gt;&lt;li&gt;, obrázky &lt;img&gt;)</label>
-      <textarea id="body_html" name="body_html" rows="26" style="font-family:monospace;font-size:.82rem;"><?= htmlspecialchars($c['body_html']) ?></textarea>
-      <p class="form-hint">Cesty k obrázkům nahraným v sekci <a href="/admin/media.php">Média</a> vložte do atributu <code>src="…"</code>.</p>
+      <label for="body_html">Celý text stránky</label>
+      <textarea id="body_html" name="body_html" rows="26"><?= htmlspecialchars($c['body_html']) ?></textarea>
+      <p class="form-hint">Nadpisy, tučné písmo, odrážky, odkazy a obrázky nastavíte tlačítky v liště editoru. Vlastní obrázek nejdřív nahrajte v sekci <a href="/admin/media.php">Média</a> a jeho adresu vložte do okna pro obrázek.</p>
     </div>
   </div>
 
@@ -68,4 +69,5 @@ adminHeader('Rady a pojmy', 'content-rady');
   <button type="submit" class="btn btn--primary">Uložit a publikovat</button>
 </form>
 
+<?php richEditor('#body_html', 'Odstavec=p; Nadpis=h2; Podnadpis=h4', 700, true); ?>
 <?php adminFooter(); ?>

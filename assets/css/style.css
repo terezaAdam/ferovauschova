@@ -345,9 +345,10 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 .article-body ul li { font-size: .97rem; padding-left: 1.3rem; position: relative; margin-bottom: .5rem; color: var(--text); }
 .article-body ul li::before { content: ''; position: absolute; left: 0; top: .65em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
-.check-list { margin-top: 1.25rem; display: flex; flex-direction: column; gap: .75rem; }
-.check-list li { font-size: .95rem; color: var(--text); padding-left: 1.6rem; position: relative; }
-.check-list li::before {
+/* .about__grid > div > ul: lists added in the admin editor (no class) look the same */
+.check-list, .about__grid > div > ul { margin-top: 1.25rem; display: flex; flex-direction: column; gap: .75rem; }
+.check-list li, .about__grid > div > ul li { font-size: .95rem; color: var(--text); padding-left: 1.6rem; position: relative; }
+.check-list li::before, .about__grid > div > ul li::before {
   content: '✓'; position: absolute; left: 0; top: 0;
   color: var(--accent); font-weight: 700; font-size: .9rem;
 }

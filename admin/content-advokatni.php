@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/rich-editor.php';
 requireAuth();
 
 function postScalar(string $key, string $default = ''): string {
@@ -75,7 +76,7 @@ adminHeader('Advokátní úschova', 'content-advokatni');
       <input type="text" name="section_title[]" value="<?= htmlspecialchars($s['title']) ?>">
     </div>
     <div class="form-group">
-      <label>Text sekce (HTML — odstavce &lt;p&gt;, seznamy &lt;ul&gt;&lt;li&gt;, zvýraznění &lt;strong&gt;)</label>
+      <label>Text sekce</label>
       <textarea name="section_body[]" rows="10"><?= htmlspecialchars($s['body_html']) ?></textarea>
     </div>
   </div>
@@ -96,4 +97,5 @@ adminHeader('Advokátní úschova', 'content-advokatni');
   <button type="submit" class="btn btn--primary">Uložit a publikovat</button>
 </form>
 
+<?php richEditor('textarea[name="section_body[]"]', '', 320); ?>
 <?php adminFooter(); ?>
