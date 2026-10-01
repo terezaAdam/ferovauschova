@@ -76,7 +76,7 @@ adminHeader('Úvodní stránka', 'content-index');
     <div class="form-group">
       <label for="hero_image_url">URL úvodního obrázku</label>
       <input type="text" id="hero_image_url" name="hero_image_url" value="<?= htmlspecialchars($c['hero_image_url']) ?>">
-      <p class="form-hint">Nový obrázek nejdřív nahrajte v sekci <a href="/admin/media.php">Média</a> a vložte zkopírovanou cestu.</p>
+      <p class="form-hint">Vložte celou adresu obrázku (začíná https://).</p>
     </div>
   </div>
 

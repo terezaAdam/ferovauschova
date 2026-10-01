@@ -50,7 +50,7 @@ adminHeader('Rady a pojmy', 'content-rady');
     <div class="form-group">
       <label for="body_html">Celý text stránky</label>
       <textarea id="body_html" name="body_html" rows="26"><?= htmlspecialchars($c['body_html']) ?></textarea>
-      <p class="form-hint">Nadpisy, tučné písmo, odrážky, odkazy a obrázky nastavíte tlačítky v liště editoru. Vlastní obrázek nejdřív nahrajte v sekci <a href="/admin/media.php">Média</a> a jeho adresu vložte do okna pro obrázek.</p>
+      <p class="form-hint">Nadpisy, tučné písmo, odrážky, odkazy a obrázky nastavíte tlačítky v liště editoru. Obrázek se vkládá zadáním jeho adresy (začíná https://).</p>
     </div>
   </div>
 
