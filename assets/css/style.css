@@ -20,7 +20,7 @@
   --r:  4px;
   --tr: .2s ease;
   --mw: 1180px;
-  --nh: 132px;
+  --nh: 88px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -87,7 +87,7 @@ p:last-child { margin-bottom: 0; }
   display: flex; align-items: center; gap: .5rem; justify-self: center; white-space: nowrap;
 }
 .nav__logo span { color: var(--accent); }
-.nav__logo-img { height: 128px; width: auto; display: block; }
+.nav__logo-img { height: 64px; width: auto; display: block; }
 .nav__links { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
 .nav__links--left { justify-self: start; }
 .nav__links--right { justify-self: end; }
@@ -410,9 +410,12 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 .fade-in { animation: fadeIn .6s ease both; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-@media (max-width: 980px) {
+/* Below ~1025px the left menu links wrap into two rows, so switch to the hamburger a bit earlier. */
+@media (max-width: 1040px) {
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }
+}
+@media (max-width: 980px) {
   .hero__overlay { background: rgba(0,0,0,.78); }
   .hero__content-side { padding: 60px 24px; }
   .hero__desc { max-width: 100%; }
@@ -440,6 +443,8 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
   .services-layout .service-section.active { display: block; }
 }
 @media (max-width: 600px) {
+  :root { --nh: 72px; }
+  .nav__logo-img { height: 50px; }
   .values__grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; }
   .section { padding: 56px 0; }
