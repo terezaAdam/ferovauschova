@@ -22,9 +22,9 @@ document.querySelectorAll('form[method="POST"]').forEach(function (form) {
   }
   ?>
 <script>
-if (window.tinymce) {
-  tinymce.init({
-    selector: <?= json_encode($selector) ?>,
+// Config kept by selector so textareas added later (new sections) can get the same editor.
+window.fuEditorConfigs = window.fuEditorConfigs || {};
+window.fuEditorConfigs[<?= json_encode($selector) ?>] = {
     license_key: 'gpl',
     language: 'cs',
     height: <?= $height ?>,
@@ -40,7 +40,9 @@ if (window.tinymce) {
     extended_valid_elements: 'div[class|style],img[src|alt|style|class],p[style|class],ul[class],h4',
     entity_encoding: 'raw',
     content_style: 'body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 15px; line-height: 1.6; color: #222; max-width: 760px; margin: 1rem auto; padding: 0 1rem; } h2 { font-size: 1.25rem; margin: 1.5rem 0 .5rem; } h3, h4 { font-size: 1.05rem; margin: 1.25rem 0 .4rem; } img { max-width: 100%; height: auto !important; } .type-card__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }'
-  });
+};
+if (window.tinymce) {
+  tinymce.init(Object.assign({ selector: <?= json_encode($selector) ?> }, window.fuEditorConfigs[<?= json_encode($selector) ?>]));
 }
 </script>
   <?php

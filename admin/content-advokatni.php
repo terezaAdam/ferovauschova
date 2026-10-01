@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
-require_once __DIR__ . '/includes/rich-editor.php';
+require_once __DIR__ . '/includes/sections-editor.php';
 requireAuth();
 
 function postScalar(string $key, string $default = ''): string {
@@ -11,23 +11,11 @@ function postScalar(string $key, string $default = ''): string {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   requireCsrf();
   $all = readJson('content.json');
-  $defaults = fuContent('advokatni_uschova');
-
-  $sections = [];
-  foreach ((array)($_POST['section_id'] ?? []) as $i => $id) {
-    $sections[] = [
-      'id' => $defaults['sections'][$i]['id'] ?? trim($id),
-      'tab_label' => trim($_POST['section_tab_label'][$i] ?? ''),
-      'nav_label' => trim($_POST['section_nav_label'][$i] ?? ''),
-      'title'     => trim($_POST['section_title'][$i] ?? ''),
-      'body_html' => trim($_POST['section_body'][$i] ?? ''),
-    ];
-  }
 
   $all['advokatni_uschova'] = [
     'hero_title' => postScalar('hero_title'),
     'hero_desc'  => postScalar('hero_desc'),
-    'sections'   => $sections,
+    'sections'   => sectionsFromPost(),
     'cta_title'  => postScalar('cta_title'),
     'cta_text'   => postScalar('cta_text'),
   ];
@@ -57,30 +45,7 @@ adminHeader('Advokátní úschova', 'content-advokatni');
     </div>
   </div>
 
-  <?php foreach ($c['sections'] as $i => $s): ?>
-  <div class="card">
-    <div class="card__title">Sekce <?= $i + 1 ?> — <?= htmlspecialchars($s['title']) ?></div>
-    <input type="hidden" name="section_id[]" value="<?= htmlspecialchars($s['id']) ?>">
-    <div class="form-grid">
-      <div class="form-group">
-        <label>Krátký název pro záložku (mobil)</label>
-        <input type="text" name="section_tab_label[]" value="<?= htmlspecialchars($s['tab_label']) ?>">
-      </div>
-      <div class="form-group">
-        <label>Název v levém menu</label>
-        <input type="text" name="section_nav_label[]" value="<?= htmlspecialchars($s['nav_label']) ?>">
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Nadpis sekce (H2)</label>
-      <input type="text" name="section_title[]" value="<?= htmlspecialchars($s['title']) ?>">
-    </div>
-    <div class="form-group">
-      <label>Text sekce</label>
-      <textarea name="section_body[]" rows="10"><?= htmlspecialchars($s['body_html']) ?></textarea>
-    </div>
-  </div>
-  <?php endforeach; ?>
+  <?php renderSectionsEditor($c['sections']); ?>
 
   <div class="card">
     <div class="card__title">Závěrečná výzva</div>
@@ -97,5 +62,5 @@ adminHeader('Advokátní úschova', 'content-advokatni');
   <button type="submit" class="btn btn--primary">Uložit a publikovat</button>
 </form>
 
-<?php richEditor('textarea[name="section_body[]"]', '', 320); ?>
+<?php sectionsEditorScript(''); ?>
 <?php adminFooter(); ?>

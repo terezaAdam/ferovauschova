@@ -153,5 +153,12 @@ function fuDefaults(): array {
 function fuContent(string $page): array {
   $defaults = fuDefaults();
   $all = fuReadJson('content.json');
-  return array_replace_recursive($defaults[$page] ?? [], $all[$page] ?? []);
+  $saved = $all[$page] ?? [];
+  $merged = array_replace_recursive($defaults[$page] ?? [], $saved);
+  // Saved lists (sections, cards) replace the defaults as a whole; merging them
+  // item by item would bring deleted items back from the defaults.
+  foreach ($saved as $key => $value) {
+    if (is_array($value) && $value === array_values($value)) $merged[$key] = $value;
+  }
+  return $merged;
 }
