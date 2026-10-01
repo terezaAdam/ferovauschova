@@ -82,9 +82,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var form = document.getElementById('contact-form');
   if (form) {
+    var alertBox = document.getElementById('form-alert');
+    // Bots fill and submit instantly; a person needs at least a few seconds.
+    var MIN_FILL_MS = 3000;
+    var formLoadedAt = Date.now();
+
+    var setFieldError = function (field, message) {
+      var group = field.closest('.form-group');
+      if (!group) return;
+      var err = group.querySelector('.form-error-msg');
+      if (message) {
+        group.classList.add('has-error');
+        field.setAttribute('aria-invalid', 'true');
+        if (!err) {
+          err = document.createElement('span');
+          err.className = 'form-error-msg';
+          err.id = field.id + '-error';
+          // The consent checkbox sits in a flex row with its label; put the message under the label text.
+          (field.type === 'checkbox' ? group.querySelector('label') : group).appendChild(err);
+          field.setAttribute('aria-describedby', err.id);
+        }
+        err.textContent = message;
+      } else {
+        group.classList.remove('has-error');
+        field.removeAttribute('aria-invalid');
+        if (err) err.remove();
+        field.removeAttribute('aria-describedby');
+      }
+    };
+
+    var validateField = function (field) {
+      if (field.type === 'checkbox') return field.checked ? '' : 'Pro odeslání je potřeba potvrdit souhlas.';
+      if (field.required && !field.value.trim()) return 'Vyplňte prosím toto pole.';
+      if (field.type === 'email' && !field.validity.valid) return 'Zadejte prosím platný e-mail.';
+      return '';
+    };
+
+    var fieldsToCheck = Array.prototype.slice.call(form.querySelectorAll('[required]'));
+    fieldsToCheck.forEach(function (field) {
+      field.addEventListener(field.type === 'checkbox' ? 'change' : 'input', function () {
+        var group = field.closest('.form-group');
+        if (group && group.classList.contains('has-error')) setFieldError(field, validateField(field));
+      });
+    });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (form.botcheck.value) return;
+      alertBox.hidden = true;
+
+      var firstInvalid = null;
+      fieldsToCheck.forEach(function (field) {
+        var error = validateField(field);
+        setFieldError(field, error);
+        if (error && !firstInvalid) firstInvalid = field;
+      });
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      if (Date.now() - formLoadedAt < MIN_FILL_MS) {
+        alertBox.textContent = 'Formulář byl odeslán příliš rychle. Zkuste to prosím za pár sekund znovu.';
+        alertBox.hidden = false;
+        return;
+      }
+
       var msg = document.getElementById('form-msg');
       var btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;

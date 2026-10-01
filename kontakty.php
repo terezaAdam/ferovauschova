@@ -35,22 +35,27 @@ $c = fuContent('kontakty');
       <div class="contact-form">
         <h2 style="margin-bottom:.5rem;"><?= htmlspecialchars($c['form_title']) ?></h2>
         <p style="margin-bottom:1.75rem;"><?= htmlspecialchars($c['form_lead']) ?></p>
-        <form id="contact-form">
+        <form id="contact-form" novalidate>
+          <div class="form-alert" id="form-alert" role="alert" hidden></div>
           <input type="hidden" name="access_key" value="432b3f16-d270-4900-acec-d87f14b4a5a5">
           <input type="hidden" name="subject" value="Nová poptávka úschovy z webu ferovauschova.cz">
           <input type="hidden" name="from_name" value="Web Férová úschova">
           <input type="text" name="botcheck" id="botcheck" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
           <div class="form-group">
             <label for="name">Jméno *</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required autocomplete="name">
           </div>
           <div class="form-group">
             <label for="email">E-mailová adresa *</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required autocomplete="email">
           </div>
           <div class="form-group">
             <label for="message">Zpráva *</label>
             <textarea id="message" name="message" required placeholder="Popište prosím stručně vaši situaci…"></textarea>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="gdpr" required>
+            <label for="gdpr">Odesláním formuláře berete na vědomí zpracování osobních údajů za účelem vyřízení vaší poptávky. Podrobné informace o zpracování osobních údajů naleznete v <a href="/ochrana-osobnich-udaju.php" target="_blank" rel="noopener">Zásadách ochrany osobních údajů</a>.</label>
           </div>
           <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
           <div id="form-msg" class="form-msg"></div>

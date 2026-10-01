@@ -379,6 +379,17 @@ table.compare td:first-child { font-weight: 600; color: var(--forest); font-fami
 .form-check { display: flex; align-items: flex-start; gap: .6rem; margin-bottom: 1.5rem; }
 .form-check input { width: auto; margin-top: .2rem; }
 .form-check label { font-size: .83rem; color: var(--text-muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
+.form-group.form-check label { font-family: var(--font-b); margin-bottom: 0; }
+.form-check a { color: var(--forest); text-decoration: underline; }
+.form-group.has-error input:not([type="checkbox"]),
+.form-group.has-error textarea { border-color: #b3261e; }
+.form-group.has-error input[type="checkbox"] { outline: 2px solid #b3261e; outline-offset: 2px; }
+.form-error-msg { display: block; margin-top: .35rem; color: #b3261e; font-family: var(--font-b); font-size: .8rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.form-alert {
+  background: #f6e6e4; border: 1px solid rgba(138,59,50,.3); color: #8a3b32;
+  padding: .85rem 1rem; border-radius: var(--r); margin-bottom: 1rem; font-size: .88rem;
+}
+.form-alert[hidden] { display: none; }
 .form-msg { font-size: .88rem; margin-top: 1rem; padding: .85rem 1rem; border-radius: var(--r); display: none; }
 .form-msg.show { display: block; }
 .form-msg.ok { background: #e5f0e9; color: var(--forest); }
