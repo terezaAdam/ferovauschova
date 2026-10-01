@@ -55,7 +55,7 @@ $c = fuContent('kontakty');
           </div>
           <div class="form-group form-check">
             <input type="checkbox" id="gdpr" required>
-            <label for="gdpr">Odesláním formuláře berete na vědomí zpracování osobních údajů za účelem vyřízení vaší poptávky. Podrobné informace o zpracování osobních údajů naleznete v <a href="/ochrana-osobnich-udaju.php" target="_blank" rel="noopener">Zásadách ochrany osobních údajů</a>.</label>
+            <label for="gdpr">Odesláním formuláře berete na vědomí zpracování osobních údajů za účelem vyřízení vaší poptávky. Podrobné informace o zpracování osobních údajů naleznete v <a href="https://equitylegal.cz/ochrana-osobnich-udaju" target="_blank" rel="noopener">Zásadách ochrany osobních údajů</a>.</label>
           </div>
           <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
           <div id="form-msg" class="form-msg"></div>

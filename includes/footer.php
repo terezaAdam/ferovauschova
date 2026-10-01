@@ -16,7 +16,7 @@
         <h4>Společnost</h4>
         <ul class="footer__links">
           <li><a href="/kontakty.php">Kontakt</a></li>
-          <li><a href="/ochrana-osobnich-udaju.php">Ochrana osobních údajů</a></li>
+          <li><a href="https://equitylegal.cz/ochrana-osobnich-udaju" target="_blank" rel="noopener">Ochrana osobních údajů</a></li>
           <li><a href="https://www.equitylegal.cz" target="_blank" rel="noopener">Equity Legal</a></li>
         </ul>
       </div>

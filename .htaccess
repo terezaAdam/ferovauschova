@@ -39,6 +39,8 @@ AddDefaultCharset UTF-8
   RewriteRule ^admin/includes/ - [F,L]
   RewriteRule ^assets/uploads/.*\.(php|php\d|phtml|phar)$ - [F,L]
   RewriteRule ^prihlaseni/?$ admin/login.php [L,QSA]
+  # Privacy policy lives on equitylegal.cz; keep old links working
+  RewriteRule ^ochrana-osobnich-udaju(\.php)?/?$ https://equitylegal.cz/ochrana-osobnich-udaju [R=301,L]
 </IfModule>
 <Files "*.log">
   Require all denied
